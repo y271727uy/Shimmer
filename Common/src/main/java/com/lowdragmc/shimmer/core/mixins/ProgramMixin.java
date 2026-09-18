@@ -44,9 +44,6 @@ public abstract class ProgramMixin {
              * 因为mixin插入位置导致mui的shader出现问题
              * 只有开发环境会复现这个问题
              * 旧代码用的是int index = matcher.find() ? matcher.group().length() : 0
-             * group().length()是匹配串长度不是它在文件里的位置，只有 #version 从文件第0个字符开始时，这两个数字才碰巧相等
-             * 原版shader是文件开头#version所以看不出问题
-             * MUI的shader前面有一段版权注释而#version在注释后面
              **/
             int index = matcher.find() ? matcher.end() : 0;
             if (pShaderSourceName.equals("Mod Resources") || pShaderSourceName.equals("Default")){
